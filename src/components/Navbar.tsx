@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark, faGamepad, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import psLogo from '../assets/ps-logo.svg';
+import MenuNavbar from './MenuNavbar';
 
 const Navbar: React.FC = () => {
     const [nav, setNav] = useState(false);
@@ -9,9 +10,6 @@ const Navbar: React.FC = () => {
     const handleNav: () => void = () => {
         setNav(!nav);
     };
-
-
-    const navCSS: string = "md:hidden h-full bg-white ease-in-out duration-500 z-0 relative top-5";
     const navStyle: string = 'relative flex justify-between items-center h-16 max-w-[1240px] mx-auto px-4 bg-white z-10'
 
     return (
@@ -36,20 +34,7 @@ const Navbar: React.FC = () => {
                 <button className='bg-[#0070D1] px-4 rounded-xl text-white'>Sign In</button>
 
             </div>
-            <ul className={nav
-                ? `${navCSS} left-4  w-[100%]`
-                : `${navCSS} left-[-100%] w-[60%]`}>
-
-                <li className='p-4'>
-                    <FontAwesomeIcon icon={faGamepad} size='xl' />
-                    <a className='ml-4' href="/">Games</a>
-                </li>
-                <li className='p-4'><a href="/">Hardware</a></li>
-                <li className='p-4'><a href="/">Services</a></li>
-                <li className='p-4'><a href="/">News</a></li>
-                <li className='p-4'><a href="/">Shop</a></li>
-                <li className='p-4'><a href="/">Support</a></li>
-            </ul>
+            <MenuNavbar nav={nav}/>
         </div>
     );
 };
