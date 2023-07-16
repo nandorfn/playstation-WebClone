@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     const handleNav: () => void = () => {
         setNav(!nav);
     };
-    const navStyle: string = 'relative flex justify-between items-center h-16 max-w-[1240px] mx-auto px-4 bg-white z-10'
+    const navStyle: string = 'relative flex justify-between items-center h-16 max-w-[1240px] mx-auto px-4 bg-white z-20'
 
     return (
         <div>

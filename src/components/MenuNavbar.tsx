@@ -5,7 +5,6 @@ import {faGamepad, faAngleRight, faServer, faTv, faNewspaper, faStore, faCircleQ
 interface MenuNavbarProps {
     nav: boolean;
 }
-
 const MenuNavbar: React.FC<MenuNavbarProps> = ({nav}) => {
     interface MenuItem {
         icon: IconDefinition;
@@ -20,13 +19,13 @@ const MenuNavbar: React.FC<MenuNavbarProps> = ({nav}) => {
         { icon: faStore, text: 'Shop' },
         { icon: faCircleQuestion, text: 'Support' }
     ];
-    const navCSS: string = "md:hidden h-full bg-white ease-in-out duration-500 z-0 relative top-5";
+    const navCSS: string = "md:hidden h-screen bg-white ease-in-out duration-500 z-10 relative top-5";
 
     return (
         <>
             <ul className={nav
-                ? `${navCSS} left-4 w-[100%]`
-                : `${navCSS} left-[-100%] w-[60%]`}>
+                ? `${navCSS} left-0 top-0 w-[100%]`
+                : `${navCSS} left-[-100%] top-0 w-[60%]`}>
                 {menuItems.map((item, index) => (
                     <li key={index} className='p-4 flex justify-between'>
                         <div>
